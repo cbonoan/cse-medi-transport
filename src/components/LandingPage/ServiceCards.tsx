@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid2";
+import Grid from "@mui/material/Grid";
 import blsImg from "../../assets/images/bls.png";
 import gurneyServiceImg from "../../assets/images/gurney-transport.jpg";
 import bariatricServiceImg from "../../assets/images/bariatric-transport.jpg";
