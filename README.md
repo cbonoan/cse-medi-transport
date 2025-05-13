@@ -1,54 +1,39 @@
-# React + TypeScript + Vite
+# CSE Transportation Services Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for CSE Transportation Services, built with React, TypeScript, and Go. This platform facilitates ride reservations and driver applications for a transportation service.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Ride Reservation System**
 
-## Expanding the ESLint configuration
+  - User-friendly form for booking transportation services
+  - Support for different transport types and trip types
+  - Real-time form validation
+  - Automated email notifications for ride requests
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Driver Application Portal**
+  - Secure application submission system
+  - Resume upload functionality
+  - Experience and availability tracking
+  - Automated email notifications for new applications
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Frontend
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- React 19 with TypeScript
+- Material-UI for modern, responsive design
+- React Hook Form for form handling
+- Zod for schema validation
+- Vite for fast development and building
+- ESLint for code quality
+- SASS for styling
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Backend
+
+- Go (Golang) REST API
+- Gorilla Mux for routing
+- Rate limiting for API protection
+- CORS configuration for security
+- Environment-based configuration
+- Email service integration
