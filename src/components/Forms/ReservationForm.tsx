@@ -48,8 +48,9 @@ const ReservationForm = () => {
   });
 
   const onSubmit = handleSubmit((data) => {
+    const API_URL = import.meta.env.VITE_API_URL;
     axios
-      .post("/api/reservation", data)
+      .post(`${API_URL}/api/reservation`, data)
       .then((response) => {
         setResponseMessage(response.data.message);
         setAlertSeverity("success");

@@ -55,8 +55,9 @@ const ApplicationForm = () => {
     formData.append("availability", data.availability);
     formData.append("resume", data.resume as Blob);
 
+    const API_URL = import.meta.env.VITE_API_URL;
     axios
-      .post("/api/application", formData)
+      .post(`${API_URL}/api/application`, formData)
       .then((data) => {
         setResponseMessage(data.data.message);
         setAlertSeverity("success");
