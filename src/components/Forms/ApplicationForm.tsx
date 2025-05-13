@@ -28,6 +28,7 @@ const ApplicationForm = () => {
   const [alertSeverity, setAlertSeverity] = useState<
     "error" | "success" | "info"
   >("info");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     control,
     handleSubmit,
@@ -46,6 +47,7 @@ const ApplicationForm = () => {
   });
 
   const onSubmit = handleSubmit((data) => {
+    setIsSubmitting(true);
     const formData = new FormData();
     formData.append("firstName", data.firstName);
     formData.append("lastName", data.lastName);
@@ -65,6 +67,9 @@ const ApplicationForm = () => {
       .catch((err) => {
         setResponseMessage(err.response.data);
         setAlertSeverity("error");
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
   });
 
@@ -212,6 +217,7 @@ const ApplicationForm = () => {
               fullWidth
               sx={{ mt: 2 }}
               disabled={Object.keys(errors).length > 0}
+              loading={isSubmitting}
             >
               Submit Application
             </Button>

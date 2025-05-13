@@ -28,6 +28,7 @@ const ReservationForm = () => {
   const [alertSeverity, setAlertSeverity] = useState<
     "error" | "success" | "info"
   >("info");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const {
     control,
     handleSubmit,
@@ -48,6 +49,7 @@ const ReservationForm = () => {
   });
 
   const onSubmit = handleSubmit((data) => {
+    setIsSubmitting(true);
     const API_URL = import.meta.env.VITE_API_URL;
     axios
       .post(`${API_URL}/api/reservation`, data)
@@ -58,6 +60,9 @@ const ReservationForm = () => {
       .catch((error) => {
         setResponseMessage(error.response.data);
         setAlertSeverity("error");
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
   });
 
@@ -230,6 +235,7 @@ const ReservationForm = () => {
               fullWidth
               sx={{ mt: 2 }}
               disabled={Object.keys(errors).length > 0}
+              loading={isSubmitting}
             >
               Reserve Ride
             </Button>
