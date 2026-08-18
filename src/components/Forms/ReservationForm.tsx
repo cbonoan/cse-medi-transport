@@ -68,9 +68,16 @@ const ReservationForm = () => {
 
   return (
     <Container maxWidth="md">
-      <Paper elevation={3} sx={{ p: 4, mt: 10 }}>
-        <Typography variant="h4" component="h1" gutterBottom align="center">
+      <Paper elevation={0} sx={{ p: { xs: 3, sm: 5 }, mt: { xs: 4, md: 8 }, mb: 6, border: "1px solid", borderColor: "divider" }}>
+        <Typography variant="h4" component="h1" align="center" sx={{ fontWeight: 700 }}>
           Transportation Reservation
+        </Typography>
+        <Typography
+          variant="body1"
+          align="center"
+          sx={{ color: "text.secondary", mb: 4, mt: 1 }}
+        >
+          Fill out the form below and our team will confirm your ride.
         </Typography>
         <Box component="form" onSubmit={onSubmit} noValidate>
           <Stack spacing={3}>

@@ -35,14 +35,14 @@ const SERVICES = [
 
 export const ServiceCards = () => {
   return (
-    <Box sx={{ py: 8, backgroundColor: "#F8FAFC" }}>
+    <Box sx={{ py: 8, backgroundColor: "#F7F8FA" }}>
       <Container maxWidth="lg">
         <Typography
           variant="h4"
           sx={{
             textAlign: "center",
             mb: 4,
-            color: "#0D141C",
+            color: "text.primary",
             fontWeight: 600,
           }}
         >
@@ -55,7 +55,7 @@ export const ServiceCards = () => {
             mb: 6,
             maxWidth: "800px",
             mx: "auto",
-            color: "#4F7396",
+            color: "text.secondary",
             lineHeight: 1.8,
             fontSize: "1.1rem",
           }}

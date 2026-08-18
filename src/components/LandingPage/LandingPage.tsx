@@ -1,6 +1,7 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import "../../styles/LandingPage.scss";
 import { OurServices } from "./OurServices";
+import { FleetGallery } from "./FleetGallery";
 import { CustomButton } from "../Common/CustomButton";
 import { Link } from "react-router";
 
@@ -22,12 +23,18 @@ export const LandingPage = () => {
             efficient service.
           </Typography>
 
-          <Link to="/reservation">
-            <CustomButton>Reserve A Ride</CustomButton>
-          </Link>
+          <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+            <Link to="/reservation">
+              <CustomButton>Reserve A Ride</CustomButton>
+            </Link>
+            <Link to="/apply">
+              <CustomButton variant="outlined">Apply to Drive</CustomButton>
+            </Link>
+          </Stack>
         </div>
       </Box>
       <OurServices />
+      <FleetGallery />
 
       <Box
         textAlign="center"
@@ -42,7 +49,7 @@ export const LandingPage = () => {
           mb={3}
           sx={{
             fontWeight: "bold",
-            background: "linear-gradient(45deg, #1976d2, #42a5f5)",
+            background: "linear-gradient(45deg, #D6321F, #E85C4A)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}

@@ -18,6 +18,11 @@ export const ServiceCard = ({
         maxWidth: "280px",
         backgroundColor: "transparent",
         borderRadius: "12px",
+        transition: "transform 0.2s ease, box-shadow 0.2s ease",
+        "&:hover": {
+          transform: "translateY(-4px)",
+          boxShadow: "0 12px 24px rgba(13, 20, 28, 0.12)",
+        },
       }}
     >
       <Box sx={{ position: "relative" }}>
@@ -42,7 +47,7 @@ export const ServiceCard = ({
           variant="h5"
           gutterBottom
           sx={{
-            color: "#0D141C",
+            color: "text.primary",
             fontWeight: 600,
             fontSize: "1.5rem",
             marginBottom: "12px",
@@ -53,7 +58,7 @@ export const ServiceCard = ({
         <Typography
           variant="body1"
           sx={{
-            color: "#4F7396",
+            color: "text.secondary",
             lineHeight: 1.6,
             fontSize: "1rem",
           }}

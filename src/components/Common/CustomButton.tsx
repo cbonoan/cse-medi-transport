@@ -8,34 +8,37 @@ interface CustomButtonProps extends ButtonProps {
 export const CustomButton = ({
   children,
   variant = "contained",
+  size = "large",
   ...props
 }: CustomButtonProps) => {
   return (
     <Button
       variant={variant}
-      size="large"
+      size={size}
       sx={{
-        padding: "12px 36px",
-        fontSize: "1.2rem",
+        padding: size === "large" ? "12px 36px" : "8px 20px",
+        fontSize: size === "large" ? "1.2rem" : "1rem",
         borderRadius: "30px",
         textTransform: "none",
         fontWeight: 600,
+        whiteSpace: "nowrap",
+        width: "fit-content",
         ...(variant === "contained"
           ? {
-              backgroundColor: "#1976d2",
-              color: "#ffffff",
-              boxShadow: "0 4px 6px rgba(25,118,210,0.25)",
+              backgroundColor: "primary.main",
+              color: "primary.contrastText",
+              boxShadow: "0 4px 6px rgba(214,50,31,0.25)",
               "&:hover": {
-                backgroundColor: "#1565c0",
+                backgroundColor: "primary.dark",
                 transform: "translateY(-2px)",
-                boxShadow: "0 6px 8px rgba(25,118,210,0.3)",
+                boxShadow: "0 6px 8px rgba(214,50,31,0.3)",
               },
             }
           : {
               borderColor: "#ffffff",
               color: "#ffffff",
               "&:hover": {
-                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                backgroundColor: "rgba(255, 255, 255, 0.15)",
                 transform: "translateY(-2px)",
                 borderColor: "#ffffff",
               },
