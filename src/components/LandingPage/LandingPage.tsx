@@ -3,11 +3,17 @@ import "../../styles/LandingPage.scss";
 import { OurServices } from "./OurServices";
 import { FleetGallery } from "./FleetGallery";
 import { CustomButton } from "../Common/CustomButton";
+import { PageMeta } from "../Common/PageMeta";
 import { Link } from "react-router";
 
 export const LandingPage = () => {
   return (
     <Box id="landing-page-container">
+      <PageMeta
+        title="CSE Medical Transport | Non-Emergency Medical Transportation in Kern County, CA"
+        description="CSE Medical Transport provides reliable non-emergency medical transportation in Kern County, CA — wheelchair, gurney, bariatric, and basic life support transport. Reserve a ride or apply to drive today."
+        path="/"
+      />
       <Box id="hero-section">
         <Typography variant="h4" sx={{ fontWeight: "bolder" }}>
           CSE Medical Transport

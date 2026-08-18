@@ -32,7 +32,7 @@ const Footer = () => {
           </Typography>
         </Grid>
 
-        <Grid size={{ xs: 6, md: 2 }}>
+        <Grid size={{ xs: 12, md: 2 }}>
           <Typography
             variant="subtitle2"
             sx={{ color: "primary.light", fontWeight: 700, mb: 1.5 }}
@@ -74,13 +74,33 @@ const Footer = () => {
           >
             CONTACT US
           </Typography>
-          <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.7)" }}>
+          <Typography
+            component="a"
+            href="tel:+16619322218"
+            variant="body2"
+            sx={{
+              display: "block",
+              color: "rgba(255,255,255,0.7)",
+              textDecoration: "none",
+              "&:hover": { color: "#ffffff" },
+            }}
+          >
             Phone: (661) 932-2218
           </Typography>
           <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.7)" }}>
             Fax: (661) 932-0011
           </Typography>
-          <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.7)" }}>
+          <Typography
+            component="a"
+            href="mailto:csemeditransport@gmail.com"
+            variant="body2"
+            sx={{
+              display: "block",
+              color: "rgba(255,255,255,0.7)",
+              textDecoration: "none",
+              "&:hover": { color: "#ffffff" },
+            }}
+          >
             Email: csemeditransport@gmail.com
           </Typography>
           <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.7)" }}>
@@ -88,7 +108,7 @@ const Footer = () => {
           </Typography>
         </Grid>
 
-        <Grid size={{ xs: 6, md: 2 }}>
+        <Grid size={{ xs: 12, md: 2 }}>
           <Typography
             variant="subtitle2"
             sx={{ color: "primary.light", fontWeight: 700, mb: 1.5 }}

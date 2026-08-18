@@ -22,6 +22,7 @@ import {
 } from "../../schemas/reservationSchema";
 import axios from "axios";
 import { useState } from "react";
+import { PageMeta } from "../Common/PageMeta";
 
 const ReservationForm = () => {
   const [responseMessage, setResponseMessage] = useState<string | null>(null);
@@ -67,7 +68,13 @@ const ReservationForm = () => {
   });
 
   return (
-    <Container maxWidth="md">
+    <>
+      <PageMeta
+        title="Reserve a Ride | CSE Medical Transport"
+        description="Book non-emergency medical transportation in Kern County, CA — wheelchair, gurney, bariatric, and basic life support transport. Fast, reliable scheduling."
+        path="/reservation"
+      />
+      <Container maxWidth="md">
       <Paper elevation={0} sx={{ p: { xs: 3, sm: 5 }, mt: { xs: 4, md: 8 }, mb: 6, border: "1px solid", borderColor: "divider" }}>
         <Typography variant="h4" component="h1" align="center" sx={{ fontWeight: 700 }}>
           Transportation Reservation
@@ -254,7 +261,8 @@ const ReservationForm = () => {
           </Alert>
         )}
       </Paper>
-    </Container>
+      </Container>
+    </>
   );
 };
 

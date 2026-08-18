@@ -22,6 +22,7 @@ import {
 } from "../../schemas/applicationSchema";
 import axios from "axios";
 import { useState } from "react";
+import { PageMeta } from "../Common/PageMeta";
 
 const ApplicationForm = () => {
   const [responseMessage, setResponseMessage] = useState<string | null>(null);
@@ -74,7 +75,13 @@ const ApplicationForm = () => {
   });
 
   return (
-    <Container maxWidth="md">
+    <>
+      <PageMeta
+        title="Apply to Drive | CSE Medical Transport"
+        description="Join the CSE Medical Transport team in Kern County, CA. Apply now to drive for a reliable non-emergency medical transportation company."
+        path="/apply"
+      />
+      <Container maxWidth="md">
       <Paper elevation={0} sx={{ p: { xs: 3, sm: 5 }, mt: { xs: 4, md: 8 }, mb: 6, border: "1px solid", borderColor: "divider" }}>
         <Typography variant="h4" component="h1" align="center" sx={{ fontWeight: 700 }}>
           Job Application
@@ -236,7 +243,8 @@ const ApplicationForm = () => {
           )}
         </Box>
       </Paper>
-    </Container>
+      </Container>
+    </>
   );
 };
 
